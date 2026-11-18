@@ -22,23 +22,22 @@ while True:
 
   while True:
     calories = int(input("Enter calories how much calories this had(eg.150 calories of one chicken) "))
-    
-  
-    if calories.isdigit():  #I learnt how to use isdigit by searching up built in functions 
-      calories = int(calories)
-      break
-    else:
-      print("Invalid input. Please enter a number")
 
-  while True:
+    if calories != int:
+      print("Please enter a valid input")
+  if calories == "done":
+      print("okay name the quanitites of each of your foods ")
+while True:
     quantity = input("Enter the quantity:")
-    if quantity.isdigit():
-      break
+    if quantity != int:
+      print("Please enter a valid quantity")
+    
+    
 
       
 
     food_eaten.append(food)
-    calories-food.append(calories)
+    calories_food.append(calories)
     quantities.append(quantity)
   
     #This is the myplate portion 
@@ -54,7 +53,7 @@ while True:
 
   #Functions 
 
-  def analyze_nutruiton(food_eaten, calories, quantities, protien, carbs, vegetables, fruits, fats, dairy):
+def analyze_nutruiton(food_eaten, calories, quantities, protien, carbs, vegetables, fruits, fats, dairy):
 
 
     total =  0
@@ -62,6 +61,17 @@ while True:
     for i in range(len(food_eaten)):
       total = total + (calories[i]* quantities[i])
   
+  
+  
+
+print("\n ------------------------Nutrition Report---------------------------")
+while True:
+ 
+  for i in range(len(food_eaten)):
+       print("Food:", food_eaten)
+       print("Calories,", calories_food[i])
+       print("Quantity,", quantities[i])
+       print("Total" ,calories_food[i] * quantities)
   if protein == 0:
         print("Try including a more protien in your diet")
   if protein > 350:
@@ -84,17 +94,12 @@ while True:
   if dairy >350:
         print("Try to decrease the amount of dairycalories your having ")
   
-  
-  print("\n ------------------------Nutrition Report---------------------------")
-
-  for i in range(len(food_eaten)):
-       print("Food:", food_eaten)
-       print("Calories,", calories_food[i])
-       print("Quantity,", quantities[i])
-       print("Total" ,calories_food[i] * quantities)
-
-    
-  
+  done= input("Would you Like to do it again (Y/N")
+  if done == "Y":
+        continue
+  if done == "N":
+        print("Thank you for using the Nutriton Analyzer")
+        break
                  
   
   
